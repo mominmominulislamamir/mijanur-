@@ -3,423 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>মিজানুর রহমান | ক্রিকেটার</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Noto+Serif+Bengali:wght@400;700&display=swap" rel="stylesheet">
-    
+    <title>Mijanur Islam | Elite 3D Portfolio</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <style>
-        /* সিএসএস (CSS) - ওয়েবসাইটের ডিজাইন */
-        
-        :root {
-            --primary-color: #1a2a3a; /* গাঢ় নীল - পেশাদারিত্বের জন্য */
-            --secondary-color: #fca311; /* সোনালী/হলুদ - হাইলাইটের জন্য */
-            --bg-color: #f4f7f6;
-            --text-color: #333;
-            --white: #ffffff;
-            --bangla-font: 'Noto Serif Bengali', serif;
-            --english-font: 'Poppins', sans-serif;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: var(--english-font);
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-        
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* হেডার ও নেভিগেশন */
-        header {
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 20px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--secondary-color);
-        }
-        
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: var(--white);
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-links a:hover {
-            color: var(--secondary-color);
-        }
-        
-        /* হিরো সেকশন - প্রথম দেখা */
-        .hero {
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 150px 0 100px;
-            text-align: center;
-        }
-        
-        .hero-content h1 {
-            font-family: var(--bangla-font);
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
-        
-        .hero-content p {
-            font-size: 1.2rem;
-            font-weight: 300;
-            color: #ddd;
-            margin-bottom: 30px;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--secondary-color);
-            color: var(--primary-color);
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 700;
-            transition: transform 0.3s ease;
-        }
-        
-        .btn:hover {
-            transform: translateY(-3px);
-        }
-        
-        /* প্রোফাইল ছবি */
-        .profile-img-container {
-            margin-top: -50px; /* হিরো সেকশনের নিচে বসানোর জন্য */
-            text-align: center;
-        }
-        
-        .profile-img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 8px solid var(--white);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-        
-        /* সেকশন জেনারেল স্টাইল */
-        section {
-            padding: 80px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            font-family: var(--bangla-font);
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-            color: var(--primary-color);
-            position: relative;
-        }
-        
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background-color: var(--secondary-color);
-            margin: 10px auto 0;
-            border-radius: 2px;
-        }
-        
-        /* আমার সম্পর্কে */
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
-        
-        .about-text {
-            flex: 1;
-            font-family: var(--bangla-font);
-            font-size: 1.1rem;
-            color: #555;
-            text-align: justify;
-        }
-        
-        .about-details {
-            list-style: none;
-            margin-top: 20px;
-        }
-        
-        .about-details li {
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-        
-        .about-details li strong {
-            color: var(--primary-color);
-        }
-        
-        /* ক্রিকেটিং পরিসংখ্যান */
-        .stats {
-            background-color: var(--white);
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-        
-        .stat-card {
-            background-color: var(--bg-color);
-            padding: 40px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-        }
-        
-        .stat-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .stat-icon {
-            font-size: 2.5rem;
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-        }
-        
-        .stat-card h3 {
-            font-size: 1.2rem;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-        
-        .stat-card p {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-        }
-        
-        /* গ্যালারি */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        
-        .gallery-item {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        }
-        
-        .gallery-item img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-        
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-        
-        /* যোগাযোগ */
-        .contact {
-            background-color: var(--primary-color);
-            color: var(--white);
-        }
-        
-        .contact .section-title {
-            color: var(--white);
-        }
-        
-        .contact-content {
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .contact-links {
-            margin-top: 30px;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-        }
-        
-        .contact-links a {
-            color: var(--white);
-            font-size: 2rem;
-            transition: color 0.3s ease;
-        }
-        
-        .contact-links a:hover {
-            color: var(--secondary-color);
-        }
-        
-        /* ফুটার */
-        footer {
-            background-color: #15202b;
-            color: #aaa;
-            padding: 30px 0;
-            text-align: center;
-            font-size: 0.9rem;
-        }
-        
-        /* মোবাইল রেসপন্সিভ */
-        @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 2.2rem;
-            }
-            .about-content {
-                flex-direction: column-reverse;
-                text-align: center;
-            }
-            .about-text {
-                text-align: center;
-            }
-            .nav-links {
-                gap: 10px;
-            }
-            .nav-links a {
-                font-size: 0.8rem;
-            }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Hind+Siliguri:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">Mijanur Rahman</div>
-                <ul class="nav-links">
-                    <li><a href="#about">আমার সম্পর্কে</a></li>
-                    <li><a href="#stats">পরিসংখ্যান</a></li>
-                    <li><a href="#gallery">গ্যালারি</a></li>
-                    <li><a href="#contact">যোগাযোগ</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <canvas id="bgCanvas"></canvas>
 
-    <section class="hero" id="home">
-        <div class="container hero-content">
-            <h1>মিজানুর রহমান</h1>
-            <p>পেশাদার ক্রিকেটার | অল-রাউন্ডার</p>
-            <a href="#contact" class="btn">আমাকে ফলো করুন</a>
-        </div>
-    </section>
-    
-    <div class="profile-img-container">
-        <img src="https://via.placeholder.com/180" alt="Mijanur Rahman Profile" class="profile-img">
+    <div class="wrapper">
+        <nav class="navbar">
+            <div class="logo">MI<span>.</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">হোম</a></li>
+                <li><a href="#about">পরিচয়</a></li>
+                <li><a href="#contact">যোগাযোগ</a></li>
+            </ul>
+        </nav>
+
+        <section id="home" class="hero-section">
+            <div class="glass-container" id="mainCard">
+                <div class="profile-area">
+                    <img src="https://via.placeholder.com/150" alt="Mijanur Islam" class="profile-pic">
+                </div>
+                
+                <h1 class="glitch" data-text="MIJANUR ISLAM">MIJANUR ISLAM</h1>
+                <p class="typing-text">আমি একজন <span id="typed"></span></p>
+
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+
+                <div class="action-btns">
+                    <button class="btn primary-btn">প্রজেক্ট দেখুন</button>
+                    <button class="btn secondary-btn">সিভি ডাউনলোড</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="details-section">
+            <div class="info-grid">
+                <div class="info-card">
+                    <i class="fas fa-code"></i>
+                    <h3>দক্ষতা</h3>
+                    <p>আধুনিক ওয়েবসাইট ডিজাইন এবং ৩ডি ইন্টারফেস তৈরিতে আমি পারদর্শী।</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-rocket"></i>
+                    <h3>লক্ষ্য</h3>
+                    <p>প্রযুক্তির মাধ্যমে নতুন কিছু তৈরি করা এবং নিজেকে উন্নত করা।</p>
+                </div>
+            </div>
+        </section>
     </div>
 
-    <section id="about">
-        <div class="container">
-            <h2 class="section-title">আমার সম্পর্কে</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>আমি মিজানুর রহমান, একজন নিবেদিতপ্রাণ ক্রিকেটার। শৈশব থেকেই ক্রিকেটের প্রতি আমার গভীর আবেগ এবং এই খেলায় নিজেকে প্রতিষ্ঠা করার স্বপ্ন ছিল। আমি মূলত একজন অল-রাউন্ডার, ডানহাতি ব্যাটসম্যান এবং অফ-স্পিন বোলার।</p>
-                    <p>আমার লক্ষ্য মাঠের প্রতিটি মুহূর্তে নিজের সেরাটা দেওয়া এবং দলের জয়ে ভূমিকা রাখা। কঠোর পরিশ্রম, ধৈর্য এবং খেলাধুলার প্রতি ভালোবাসা আমাকে সামনের দিকে এগিয়ে নিয়ে যাচ্ছে।</p>
-                    
-                    <ul class="about-details">
-                        <li><strong>জন্ম:</strong> ১লা জানুয়ারি, ২০০০</li>
-                        <li><strong>জাতীয়তা:</strong> বাংলাদেশী</li>
-                        <li><strong>খেলার ধরন:</strong> অল-রাউন্ডার</li>
-                        <li><strong>ব্যাটিং:</strong> ডানহাতি</li>
-                        <li><strong>বোলিং:</strong> ডানহাতি অফ-স্পিন</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="stats" id="stats">
-        <div class="container">
-            <h2 class="section-title">ক্রিকেটিং পরিসংখ্যান</h2>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <i class="fas fa-baseball-bat-ball stat-icon"></i>
-                    <h3>মোট রান</h3>
-                    <p>২,৫০০+</p>
-                </div>
-                <div class="stat-card">
-                    <i class="fas fa-ball-pile stat-icon"></i>
-                    <h3>মোট উইকেট</h3>
-                    <p>১২০+</p>
-                </div>
-                <div class="stat-card">
-                    <i class="fas fa-trophy stat-icon"></i>
-                    <h3>ম্যাচ খেলেছেন</h3>
-                    <p>৮০+</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="gallery">
-        <div class="container">
-            <h2 class="section-title">গ্যালারি</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item"><img src="https://via.placeholder.com/400x300?text=Match+1" alt="ক্রিকেট ম্যাচ"></div>
-                <div class="gallery-item"><img src="https://via.placeholder.com/400x300?text=Practice+2" alt="অনুশীলন সেশন"></div>
-                <div class="gallery-item"><img src="https://via.placeholder.com/400x300?text=Award+3" alt="পুরস্কার গ্রহণ"></div>
-                <div class="gallery-item"><img src="https://via.placeholder.com/400x300?text=Action+4" alt="ব্যাটিং অ্যাকশন"></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2 class="section-title">যোগাযোগ করুন</h2>
-            <div class="contact-content">
-                <p>আপনি যদি আমার সাথে যোগাযোগ করতে চান বা কোনো অনুসন্ধান থাকে, তবে আমাকে সোশ্যাল মিডিয়ায় ফলো করতে পারেন অথবা ইমেইল করতে পারেন।</p>
-                
-                <div class="contact-links">
-                    <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="mailto:mijanur@example.com"><i class="fas fa-envelope"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; ২০২৪ মিজানুর রহমান | সর্বস্বত্ব সংরক্ষিত</p>
-        </div>
-    </footer>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
