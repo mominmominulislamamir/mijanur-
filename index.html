@@ -1,334 +1,117 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="আনন্দ ভ্রমণ-২০২৬ | সাফিনা পার্ক রাজশাহী - ঈদের ২য় দিনে একদিনের আনন্দ ভ্রমণ">
-    <title>আনন্দ ভ্রমণ-২০২৬ | সাফিনা পার্ক রাজশাহী</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700;900&display=swap');
-        
-        :root { --green: #00b140; }
-        
-        * { font-family: 'Hind Siliguri', sans-serif; }
-        
-        body { 
-            background: linear-gradient(to bottom, #0f4a2b, #1a5c3a); 
-            margin: 0; 
-            padding: 0; 
-            overflow-x: hidden;
-        }
-        
-        .hero-bg {
-            background: radial-gradient(circle at center, #ffffff 0%, #e5f4e5 100%);
-            box-shadow: 0 0 100px rgba(0, 177, 64, 0.7);
-        }
-        
-        .circle-3d {
-            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            transform-style: preserve-3d;
-        }
-        
-        .circle-3d:hover {
-            transform: rotateY(25deg) rotateX(15deg) scale(1.08);
-            box-shadow: 0 40px 80px -15px rgb(0 177 64);
-        }
-        
-        .title-3d {
-            text-shadow: 6px 6px 0 #00b140, -3px -3px 0 #fff, 3px -3px 0 #fff, -3px 3px 0 #fff, 3px 3px 0 #fff;
-            transform: perspective(1000px) rotateX(12deg);
-            transition: all 0.4s ease;
-        }
-        
-        .red-banner {
-            animation: bannerSlide 25s linear infinite;
-        }
-        
-        @keyframes bannerSlide {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-        
-        .section-title {
-            position: relative;
-        }
-        
-        .section-title:after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 120px;
-            height: 4px;
-            background: #00b140;
-            border-radius: 9999px;
-        }
-        
-        .fade-in {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.8s ease;
-        }
-        
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>আনন্দ ভ্রমণ ২০২৬ | সাফিনা পার্ক রাজশাহী</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;700;900&display=swap');
+    body { font-family: 'Noto Sans Bengali', sans-serif; }
+    
+    .circle-img {
+      border: 14px solid #22c55e;
+      border-radius: 9999px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      transition: all 0.5s ease;
+    }
+    .circle-img:hover {
+      transform: scale(1.12) rotate(5deg);
+      box-shadow: 0 30px 60px rgba(34, 197, 94, 0.5);
+    }
+    
+    .hero-bg {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                  url('https://i.ytimg.com/vi/siHIuzuPmWY/maxresdefault.jpg') center/cover no-repeat;
+    }
+    
+    .price-circle {
+      animation: pulse 2.5s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+  </style>
 </head>
-<body class="text-white">
+<body class="bg-gradient-to-b from-emerald-50 to-green-100">
 
-    <!-- ==================== NAVBAR ==================== -->
-    <nav class="bg-white/10 backdrop-blur-md border-b border-white/20 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-            <div class="flex items-center gap-4">
-                <div class="w-14 h-14 bg-[#00b140] rounded-2xl flex items-center justify-center text-4xl rotate-12 shadow-lg">🏰</div>
-                <h1 class="text-4xl font-bold text-white tracking-tighter">সাফিনা পার্ক</h1>
-            </div>
-            <div class="hidden md:flex items-center gap-10 text-lg font-medium">
-                <a href="#home" class="hover:text-[#00b140] transition-colors">হোম</a>
-                <a href="#attractions" class="hover:text-[#00b140] transition-colors">আকর্ষণ</a>
-                <a href="#gallery" class="hover:text-[#00b140] transition-colors">গ্যালারি</a>
-                <a href="#schedule" class="hover:text-[#00b140] transition-colors">সময়সূচী</a>
-                <a href="#contact" class="hover:text-[#00b140] transition-colors">যোগাযোগ</a>
-            </div>
-            <div class="flex items-center gap-4">
-                <a href="tel:01618379029" class="bg-[#00b140] hover:bg-white hover:text-[#00b140] px-8 py-4 rounded-3xl font-semibold flex items-center gap-3 transition-all">
-                    <i class="fas fa-phone"></i> কল করুন
-                </a>
-                <button onclick="copyFee()" class="bg-white text-[#00b140] hover:bg-[#00b140] hover:text-white px-10 py-4 rounded-3xl font-bold flex items-center gap-3 transition-all">
-                    <i class="fas fa-ticket"></i> ফি: ৬৫০/-
-                </button>
-            </div>
-        </div>
-    </nav>
+  <!-- Hero Section -->
+  <section class="hero-bg text-white py-24 text-center">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="text-2xl md:text-3xl font-medium tracking-wider">খুশিতে একদিন আনন্দে সারাদিন..</p>
+      <h1 class="text-6xl md:text-7xl font-black text-blue-950 mt-4 drop-shadow-2xl">আনন্দ ভ্রমণ-২০২৬</h1>
+      <h2 class="text-6xl md:text-7xl font-bold text-red-600 drop-shadow-xl mt-1">সাফিনা পার্ক</h2>
+      <h3 class="text-5xl md:text-6xl font-bold text-amber-300 mt-2">রাজশাহী</h3>
+    </div>
+  </section>
 
-    <!-- ==================== HERO SECTION ==================== -->
-    <section id="home" class="hero-bg py-20 relative">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                
-                <!-- Left -->
-                <div class="lg:col-span-4 space-y-8">
-                    <div class="text-5xl font-bold text-[#00b140] leading-tight">
-                        খুশিতে একদিন<br>আনন্দে সারাদিন..
-                    </div>
-                    <div class="circle-3d mx-auto lg:mx-0 bg-white rounded-full p-6 shadow-2xl border-8 border-[#00b140] w-80 h-80">
-                        <img src="https://picsum.photos/id/1015/800/800" alt="সাফিনা পার্ক ক্যাসেল" class="w-full h-full object-cover rounded-3xl">
-                    </div>
-                </div>
+  <!-- Green Banner -->
+  <div class="bg-emerald-700 text-white text-center py-6 text-2xl font-bold shadow-lg">
+    তারিখ : ইদের ২য় দিন
+  </div>
 
-                <!-- Center -->
-                <div class="lg:col-span-4 text-center">
-                    <h1 class="title-3d text-7xl md:text-8xl font-black text-[#002b1a] leading-none mb-4">আনন্দ ভ্রমণ</h1>
-                    <div class="text-7xl font-black text-[#00b140] mb-8">২০২৬</div>
-                    
-                    <div class="inline-flex items-center justify-center bg-[#00b140] text-white text-6xl font-black px-16 py-6 rounded-[3.5rem] shadow-2xl mb-10 border-8 border-white">
-                        সাফিনা পার্ক
-                    </div>
-                    
-                    <div class="text-5xl font-bold text-[#00b140] mb-10">রাজশাহী</div>
+  <div class="max-w-7xl mx-auto px-6 py-16">
+    <div class="grid lg:grid-cols-12 gap-12 items-center">
 
-                    <div class="inline-flex bg-gradient-to-r from-[#00b140] to-[#008f32] text-white px-12 py-6 rounded-3xl text-4xl font-bold shadow-2xl mb-12 items-center gap-4">
-                        <i class="fas fa-calendar-alt text-5xl"></i>
-                        তারিখ : ঈদের ২য় দিন
-                    </div>
-
-                    <div class="mx-auto w-56 h-56 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center border-8 border-white shadow-2xl circle-3d relative">
-                        <div class="text-center text-white">
-                            <div class="text-5xl font-black">ফি</div>
-                            <div class="text-7xl font-black leading-none">৬৫০</div>
-                            <div class="text-2xl font-medium">টাকা মাত্র</div>
-                        </div>
-                        <div class="absolute -top-4 -right-4 bg-white text-[#00b140] font-bold px-6 py-2 rounded-3xl text-lg shadow-inner">প্রতি জন</div>
-                    </div>
-                </div>
-
-                <!-- Right -->
-                <div class="lg:col-span-4 space-y-10">
-                    <div class="circle-3d mx-auto lg:ml-auto bg-white rounded-full p-6 shadow-2xl border-8 border-[#00b140] w-80 h-80">
-                        <img src="https://picsum.photos/id/1016/800/800" alt="ওয়াটার পার্ক" class="w-full h-full object-cover rounded-3xl">
-                    </div>
-                    <div class="circle-3d mx-auto lg:ml-auto bg-white rounded-full p-6 shadow-2xl border-8 border-[#00b140] w-80 h-80 relative">
-                        <img src="https://picsum.photos/id/1005/800/800" alt="গ্রুপ সেলফি" class="w-full h-full object-cover rounded-3xl">
-                    </div>
-                </div>
-            </div>
+      <!-- Left Side - Circle Images (অরিজিনাল লেআউট) -->
+      <div class="lg:col-span-5 space-y-10">
+        <div class="grid grid-cols-2 gap-8">
+          <img src="https://i.ytimg.com/vi/siHIuzuPmWY/maxresdefault.jpg" 
+               alt="সাফিনা পার্ক ক্যাসেল" class="circle-img w-full aspect-square object-cover">
+          
+          <img src="https://i.ytimg.com/vi/siHIuzuPmWY/hqdefault.jpg" 
+               alt="ওয়াটার পার্ক" class="circle-img w-full aspect-square object-cover">
         </div>
 
-        <!-- 3D Canvas -->
-        <div class="absolute bottom-12 right-12 hidden xl:block">
-            <div class="w-72 h-72 bg-white/10 backdrop-blur-2xl rounded-3xl p-6 border border-white/30">
-                <canvas id="threeCanvas" width="260" height="260" class="rounded-2xl"></canvas>
-            </div>
+        <div class="flex justify-center">
+          <img src="https://i.ytimg.com/vi/zQRxERHEgRg/maxresdefault.jpg" 
+               alt="গ্রুপ সেলফি" class="circle-img w-80 aspect-square object-cover">
         </div>
-    </section>
 
-    <!-- ==================== ABOUT SECTION ==================== -->
-    <section class="py-20 bg-white/5">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="section-title text-5xl font-bold text-center text-white mb-16">সাফিনা পার্ক সম্পর্কে</h2>
-            <div class="grid md:grid-cols-3 gap-10 text-center">
-                <div class="bg-white/10 backdrop-blur p-10 rounded-3xl">
-                    <i class="fas fa-mountain text-6xl text-[#00b140] mb-6"></i>
-                    <h3 class="text-3xl font-bold mb-4">বিশাল এলাকা</h3>
-                    <p class="text-lg">রাজশাহীর সবচেয়ে বড় থিম পার্ক। ক্যাসেল, ওয়াটার স্লাইড, ডাইনোসর জোন সহ অনেক কিছু।</p>
-                </div>
-                <div class="bg-white/10 backdrop-blur p-10 rounded-3xl">
-                    <i class="fas fa-water text-6xl text-[#00b140] mb-6"></i>
-                    <h3 class="text-3xl font-bold mb-4">ওয়াটার জোন</h3>
-                    <p class="text-lg">বিশ্বমানের ওয়াটার স্লাইড এবং পুল। গরমে ঠান্ডা আনন্দের জন্য আদর্শ।</p>
-                </div>
-                <div class="bg-white/10 backdrop-blur p-10 rounded-3xl">
-                    <i class="fas fa-dinosaur text-6xl text-[#00b140] mb-6"></i>
-                    <h3 class="text-3xl font-bold mb-4">ডাইনোসর জোন</h3>
-                    <p class="text-lg">বাস্তবসম্মত ডাইনোসর মডেল ও জিরাফ। শিশু-কিশোরদের জন্য স্বপ্নের জগত।</p>
-                </div>
-            </div>
+        <div class="grid grid-cols-2 gap-8">
+          <img src="https://i.ytimg.com/vi/zQRxERHEgRg/maxresdefault.jpg" 
+               alt="ডাইনোসর" class="circle-img w-full aspect-square object-cover">
+          
+          <img src="https://i.ytimg.com/vi/siHIuzuPmWY/maxresdefault.jpg" 
+               alt="রাইডস" class="circle-img w-full aspect-square object-cover">
         </div>
-    </section>
+      </div>
 
-    <!-- ==================== ATTRACTIONS ==================== -->
-    <section id="attractions" class="py-20">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="section-title text-5xl font-bold text-center text-white mb-16">আমাদের আকর্ষণসমূহ</h2>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                <!-- Repeated cards for length -->
-                <div class="circle-3d bg-white/10 p-8 rounded-3xl text-center">
-                    <img src="https://picsum.photos/id/1015/400/300" class="rounded-2xl mb-6 w-full" alt="ক্যাসেল">
-                    <h4 class="text-2xl font-bold">রয়্যাল ক্যাসেল</h4>
-                </div>
-                <div class="circle-3d bg-white/10 p-8 rounded-3xl text-center">
-                    <img src="https://picsum.photos/id/1016/400/300" class="rounded-2xl mb-6 w-full" alt="ওয়াটার স্লাইড">
-                    <h4 class="text-2xl font-bold">থ্রিল ওয়াটার স্লাইড</h4>
-                </div>
-                <div class="circle-3d bg-white/10 p-8 rounded-3xl text-center">
-                    <img src="https://picsum.photos/id/201/400/300" class="rounded-2xl mb-6 w-full" alt="ডাইনোসর">
-                    <h4 class="text-2xl font-bold">ডাইনোসর অ্যাডভেঞ্চার</h4>
-                </div>
-                <div class="circle-3d bg-white/10 p-8 rounded-3xl text-center">
-                    <img src="https://picsum.photos/id/133/400/300" class="rounded-2xl mb-6 w-full" alt="জিরাফ">
-                    <h4 class="text-2xl font-bold">জিরাফ ভ্যালি</h4>
-                </div>
-                <!-- আরও ৮টা কার্ড যোগ করা হয়েছে (লাইন বাড়ানোর জন্য) -->
-                <div class="circle-3d bg-white/10 p-8 rounded-3xl text-center">
-                    <img src="https://picsum.photos/id/237/400/300" class="rounded-2xl mb-6 w-full" alt="পুল">
-                    <h4 class="text-2xl font-bold">বড় পুল</h4>
-                </div>
-                <div class="circle-3d bg-white/10 p-8 rounded-3xl text-center">
-                    <img src="https://picsum.photos/id/180/400/300" class="rounded-2xl mb-6 w-full" alt="খেলা">
-                    <h4 class="text-2xl font-bold">কিডস প্লে জোন</h4>
-                </div>
-                <!-- ... আরও কার্ড (কোডে পুরোটা আছে) ... -->
-            </div>
+      <!-- Right Side - Contact & Price (নাম্বার ঠিক করা) -->
+      <div class="lg:col-span-7 bg-white rounded-3xl shadow-2xl p-10 lg:p-14 border-8 border-emerald-500">
+        <h3 class="text-center text-emerald-700 text-4xl font-bold mb-10">যোগাযোগ করুন</h3>
+        
+        <div class="grid grid-cols-2 gap-y-9 text-center text-xl leading-relaxed">
+          <div><strong>মমিনুল</strong><br><span class="font-medium">০১৭১৮-৩৭৭০২৯</span></div>
+          <div><strong>জাহিদ</strong><br><span class="font-medium">০১৭৩০-৪৭৭৩৩৩</span></div>
+          <div><strong>মিজানুর</strong><br><span class="font-medium">০১৭৩০-০৬২৪৪০</span></div>
+          <div><strong>সুজন</strong><br><span class="font-medium">০১৭৪২-৭০৪৮৪৯</span></div>
         </div>
-    </section>
 
-    <!-- ==================== GALLERY SECTION (বড়) ==================== -->
-    <section id="gallery" class="py-20 bg-white/5">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="section-title text-5xl font-bold text-center text-white mb-16">গ্যালারি</h2>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                <!-- ২০+ ছবি যোগ করা হয়েছে -->
-                <img src="https://picsum.photos/id/1015/600/400" class="rounded-3xl shadow-xl hover:scale-105 transition" alt="">
-                <img src="https://picsum.photos/id/1016/600/400" class="rounded-3xl shadow-xl hover:scale-105 transition" alt="">
-                <img src="https://picsum.photos/id/1005/600/400" class="rounded-3xl shadow-xl hover:scale-105 transition" alt="">
-                <!-- আরও অনেক ছবি ... -->
-            </div>
+        <hr class="my-12 border-emerald-300">
+
+        <div class="text-center">
+          <p class="text-emerald-700 text-2xl font-semibold">আয়োজনে :</p>
+          <p class="text-3xl font-bold text-emerald-800 mt-3">মুন্না, রবিউল, রাকিবুল</p>
         </div>
-    </section>
 
-    <!-- ==================== SCHEDULE ==================== -->
-    <section id="schedule" class="py-20">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="section-title text-5xl font-bold text-center text-white mb-16">দিনের কর্মসূচী</h2>
-            <div class="max-w-2xl mx-auto bg-white/10 backdrop-blur p-12 rounded-3xl">
-                <div class="space-y-8 text-xl">
-                    <div class="flex justify-between border-b border-white/30 pb-6">
-                        <span>সকাল ৯:০০</span>
-                        <span class="font-bold">পার্কে প্রবেশ</span>
-                    </div>
-                    <div class="flex justify-between border-b border-white/30 pb-6">
-                        <span>১০:০০ - ১২:০০</span>
-                        <span class="font-bold">ওয়াটার স্লাইড ও পুল</span>
-                    </div>
-                    <!-- আরও অনেক আইটেম ... -->
-                </div>
-            </div>
+        <!-- Price Circle -->
+        <div class="mt-14 flex justify-center">
+          <div class="price-circle w-52 h-52 bg-blue-600 text-white rounded-full flex flex-col items-center justify-center text-5xl font-black shadow-2xl border-8 border-white">
+            ফি-<br>৬৫০/
+          </div>
         </div>
-    </section>
+        <p class="text-center text-gray-600 mt-5 text-lg font-medium">প্রতি জন (প্রবেশ + সব খেলাধুলা)</p>
+      </div>
+    </div>
+  </div>
 
-    <!-- ==================== CONTACT SECTION (আগের মতো) ==================== -->
-    <section id="contact" class="max-w-7xl mx-auto px-6 py-20">
-        <div class="grid md:grid-cols-2 gap-12">
-            <!-- Contact Cards (নাম্বার সহ) -->
-            <div>
-                <h2 class="text-4xl font-bold text-[#00b140] mb-8">যোগাযোগ করুন</h2>
-                <!-- মমিনুল, জাহিদ, মিজানুর, সুজন এর কার্ড -->
-                <div class="space-y-6">
-                    <div class="bg-white text-[#002b1a] p-8 rounded-3xl shadow-2xl flex justify-between items-center">
-                        <div>
-                            <div class="font-bold text-3xl">মমিনুল</div>
-                            <div class="text-4xl font-semibold">০১৬১৮-৩৭৯০২৯</div>
-                        </div>
-                        <a href="tel:01618379029" class="bg-[#00b140] text-white w-20 h-20 rounded-3xl flex items-center justify-center text-5xl">📞</a>
-                    </div>
-                    <!-- অন্য নাম্বারগুলো একইভাবে ... -->
-                </div>
-            </div>
+  <!-- Bottom Red Bar -->
+  <div class="bg-red-600 text-white text-center py-9 text-3xl font-bold tracking-wider">
+    বিন্যাকুড়ি, কাজিরডাঙ্গা, চিরিরবন্দর, দিনাজপুর ।
+  </div>
 
-            <div class="bg-white text-[#002b1a] p-14 rounded-3xl shadow-2xl">
-                <h3 class="text-5xl font-bold mb-10">আয়োজনে :</h3>
-                <div class="text-4xl space-y-6">
-                    <div>মুন্না</div>
-                    <div>রবিউল</div>
-                    <div>রাকিবুল</div>
-                </div>
-                <div class="mt-16 text-2xl">
-                    বিন্যাকুড়ি, কাজিরডাঙ্গা, চিরিরবন্দর, দিনাজপুর
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== FOOTER (খুব বড়) ==================== -->
-    <footer class="red-banner bg-[#e30613] py-12 text-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center text-3xl font-bold mb-8">
-                বিন্যাকুড়ি • কাজিরডাঙ্গা • চিরিরবন্দর • দিনাজপুর
-            </div>
-            <!-- আরও লিংক, সোশ্যাল আইকন, কপিরাইট ইত্যাদি ... -->
-        </div>
-    </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-    <script>
-        // Three.js Canvas
-        function initThreeJS() {
-            const canvas = document.getElementById('threeCanvas');
-            if (!canvas) return;
-            // ... (আগের Three.js কোড একই রাখা হয়েছে) ...
-            console.log('%c✅ বড় ভার্সন লোড হয়েছে - ১৮০০+ লাইন', 'color:#00b140;font-size:16px');
-        }
-
-        function copyFee() {
-            navigator.clipboard.writeText("সাফিনা পার্ক আনন্দ ভ্রমণ ফি মাত্র ৬৫০ টাকা!");
-            alert("✅ ফি কপি হয়েছে!");
-        }
-
-        window.onload = function() {
-            initThreeJS();
-            // Scroll fade-in animation
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) entry.target.classList.add('visible');
-                });
-            });
-            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-        };
-    </script>
 </body>
-    </html>
+</html>
