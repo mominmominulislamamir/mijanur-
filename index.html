@@ -16,24 +16,20 @@
       box-shadow: 0 20px 40px rgba(0,0,0,0.3);
       transition: all 0.5s ease;
     }
-    .circle-img:hover {
-      transform: scale(1.12) rotate(5deg);
-      box-shadow: 0 30px 60px rgba(34, 197, 94, 0.5);
-    }
+    .circle-img:hover { transform: scale(1.12) rotate(5deg); }
     
     .hero-bg {
       background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
                   url('https://i.ytimg.com/vi/siHIuzuPmWY/maxresdefault.jpg') center/cover no-repeat;
     }
     
-    .price-circle {
+    .nagad-btn {
       animation: pulse 2.5s infinite;
-      cursor: pointer;
       transition: all 0.3s;
     }
-    .price-circle:hover {
-      transform: scale(1.15);
-      box-shadow: 0 0 30px #3b82f6;
+    .nagad-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 40px #f59e0b;
     }
     @keyframes pulse {
       0%, 100% { transform: scale(1); }
@@ -44,7 +40,7 @@
 <body class="bg-gradient-to-b from-emerald-50 to-green-100">
 
   <!-- Hero Section -->
-  <section class="hero-bg text-white py-24 text-center">
+  <section class="hero-bg text-white py-20 text-center">
     <div class="max-w-6xl mx-auto px-6">
       <p class="text-2xl md:text-3xl font-medium tracking-wider">খুশিতে একদিন আনন্দে সারাদিন..</p>
       <h1 class="text-6xl md:text-7xl font-black text-blue-950 mt-4 drop-shadow-2xl">আনন্দ ভ্রমণ-২০২৬</h1>
@@ -58,69 +54,110 @@
     তারিখ : ইদের ২য় দিন
   </div>
 
-  <div class="max-w-7xl mx-auto px-6 py-16">
-    <div class="grid lg:grid-cols-12 gap-12 items-center">
+  <div class="max-w-7xl mx-auto px-6 py-12">
+    <div class="grid lg:grid-cols-12 gap-12">
 
-      <!-- Left Side - Circle Images -->
+      <!-- Left Images (অরিজিনাল ছবির মতো) -->
       <div class="lg:col-span-5 space-y-10">
         <div class="grid grid-cols-2 gap-8">
-          <img src="https://i.ytimg.com/vi/siHIuzuPmWY/maxresdefault.jpg" 
-               alt="সাফিনা পার্ক ক্যাসেল" class="circle-img w-full aspect-square object-cover">
-          
-          <img src="https://i.ytimg.com/vi/siHIuzuPmWY/hqdefault.jpg" 
-               alt="ওয়াটার পার্ক" class="circle-img w-full aspect-square object-cover">
+          <img src="https://i.ytimg.com/vi/siHIuzuPmWY/maxresdefault.jpg" alt="ক্যাসেল" class="circle-img w-full aspect-square object-cover">
+          <img src="https://i.ytimg.com/vi/siHIuzuPmWY/hqdefault.jpg" alt="ওয়াটার পার্ক" class="circle-img w-full aspect-square object-cover">
         </div>
-
         <div class="flex justify-center">
-          <img src="https://i.ytimg.com/vi/zQRxERHEgRg/maxresdefault.jpg" 
-               alt="গ্রুপ সেলফি" class="circle-img w-80 aspect-square object-cover">
+          <img src="https://i.ytimg.com/vi/zQRxERHEgRg/maxresdefault.jpg" alt="গ্রুপ সেলফি" class="circle-img w-80 aspect-square object-cover">
         </div>
-
         <div class="grid grid-cols-2 gap-8">
-          <img src="https://i.ytimg.com/vi/zQRxERHEgRg/maxresdefault.jpg" 
-               alt="ডাইনোসর" class="circle-img w-full aspect-square object-cover">
-          
-          <img src="https://i.ytimg.com/vi/siHIuzuPmWY/maxresdefault.jpg" 
-               alt="রাইডস" class="circle-img w-full aspect-square object-cover">
+          <img src="https://i.ytimg.com/vi/zQRxERHEgRg/maxresdefault.jpg" alt="ডাইনোসর" class="circle-img w-full aspect-square object-cover">
+          <img src="https://i.ytimg.com/vi/siHIuzuPmWY/maxresdefault.jpg" alt="রাইডস" class="circle-img w-full aspect-square object-cover">
         </div>
       </div>
 
-      <!-- Right Side - Contact & Price -->
-      <div class="lg:col-span-7 bg-white rounded-3xl shadow-2xl p-10 lg:p-14 border-8 border-emerald-500">
-        <h3 class="text-center text-emerald-700 text-4xl font-bold mb-10">যোগাযোগ করুন</h3>
-        
-        <div class="grid grid-cols-2 gap-y-9 text-center text-xl leading-relaxed">
-          <div><strong>মমিনুল</strong><br><span class="font-medium">০১৬১৪-৩৭৯০২৯</span></div>
-          <div><strong>জাহিদ</strong><br><span class="font-medium">০১৮৩০-৪৭৬৮১৩</span></div>
-          <div><strong>মিজানুর</strong><br><span class="font-medium">০১৯৩৩-০৬২৯৪৩</span></div>
-          <div><strong>সুজন</strong><br><span class="font-medium">০১৮৮২-৮০৪৪৮১</span></div>
+      <!-- Right Side -->
+      <div class="lg:col-span-7 space-y-10">
+
+        <!-- যোগাযোগ -->
+        <div class="bg-white rounded-3xl shadow-2xl p-8 border-8 border-emerald-500">
+          <h3 class="text-center text-emerald-700 text-3xl font-bold mb-8">যোগাযোগ করুন</h3>
+          <div class="grid grid-cols-2 gap-y-8 text-center text-lg">
+            <div><strong>মমিনুল</strong><br><span class="font-medium">০১৬১৪-৩৭৯০২৯</span></div>
+            <div><strong>জাহিদ</strong><br><span class="font-medium">০১৮৩০-৪৭৬৮১৩</span></div>
+            <div><strong>মিজানুর</strong><br><span class="font-medium">০১৯৩৩-০৬২৯৪৩</span></div>
+            <div><strong>সুজন</strong><br><span class="font-medium">০১৮৮২-৮০৪৪৮১</span></div>
+          </div>
+          <hr class="my-8 border-emerald-300">
+          <div class="text-center">
+            <p class="text-emerald-700 text-xl font-semibold">আয়োজনে :</p>
+            <p class="text-2xl font-bold text-emerald-800">মুন্না, রবিউল, রাকিবুল</p>
+          </div>
         </div>
 
-        <hr class="my-12 border-emerald-300">
-
-        <div class="text-center">
-          <p class="text-emerald-700 text-2xl font-semibold">আয়োজনে :</p>
-          <p class="text-3xl font-bold text-emerald-800 mt-3">মুন্না, রবিউল, রাকিবুল</p>
-        </div>
-
-        <!-- Clickable Price Circle with Nagad Payment -->
-        <div class="mt-14 flex justify-center">
-          <a href="https://nagad.app/send?amount=650" 
+        <!-- নগদ পেমেন্ট বাটন (অফিসিয়াল অ্যাপ লিঙ্ক সহ) -->
+        <div class="text-center py-6">
+          <a href="https://nagad.com.bd/services/?service=send-money" 
              target="_blank"
-             class="price-circle w-52 h-52 bg-blue-600 text-white rounded-full flex flex-col items-center justify-center text-5xl font-black shadow-2xl border-8 border-white hover:bg-blue-700">
-            ফি-<br>৬৫০/
-            <span class="text-sm mt-2 opacity-90">নগদে পে করুন →</span>
+             onclick="handleNagadClick()"
+             class="nagad-btn inline-flex items-center gap-4 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-bold text-2xl px-14 py-7 rounded-3xl shadow-2xl">
+            <i class="fas fa-mobile-alt text-4xl"></i>
+            নগদে ৬৫০ টাকা পে করুন
           </a>
+          <p class="mt-4 text-gray-600 text-sm">Nagad অ্যাপ ওপেন হয়ে Send Money অপশনে যাবে<br>৬৫০ টাকা দিয়ে পেমেন্ট করুন (রেফারেন্সে আপনার নাম লিখুন)</p>
         </div>
-        <p class="text-center text-gray-600 mt-5 text-lg font-medium">৬৫০ টাকা ক্লিক করে নগদে পেমেন্ট করুন</p>
+
+        <!-- রেজিস্ট্রেশন ফর্ম -->
+        <div class="bg-white rounded-3xl shadow-2xl p-10 border-8 border-emerald-500">
+          <h3 class="text-center text-emerald-700 text-3xl font-bold mb-8">রেজিস্ট্রেশন করুন</h3>
+          
+          <form id="regForm" class="space-y-6">
+            <div>
+              <label class="block text-gray-700 font-medium mb-2">পুরো নাম</label>
+              <input type="text" id="name" required class="w-full px-5 py-3 border border-emerald-300 rounded-2xl focus:outline-none focus:border-emerald-500">
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-gray-700 font-medium mb-2">মোবাইল নম্বর</label>
+                <input type="tel" id="phone" required class="w-full px-5 py-3 border border-emerald-300 rounded-2xl focus:outline-none focus:border-emerald-500">
+              </div>
+              <div>
+                <label class="block text-gray-700 font-medium mb-2">কতজন যাবেন?</label>
+                <select id="persons" required class="w-full px-5 py-3 border border-emerald-300 rounded-2xl focus:outline-none focus:border-emerald-500">
+                  <option value="">নির্বাচন করুন</option>
+                  <option value="1">১ জন</option>
+                  <option value="2">২ জন</option>
+                  <option value="3">৩ জন</option>
+                  <option value="4">৪ জন</option>
+                  <option value="5">৫+ জন</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <label class="block text-gray-700 font-medium mb-2">ঠিকানা / এলাকা</label>
+              <input type="text" id="address" class="w-full px-5 py-3 border border-emerald-300 rounded-2xl focus:outline-none focus:border-emerald-500">
+            </div>
+            <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xl py-4 rounded-3xl transition">
+              রেজিস্ট্রেশন করুন
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- Bottom Red Bar -->
+  <!-- Bottom Bar -->
   <div class="bg-red-600 text-white text-center py-9 text-3xl font-bold tracking-wider">
     বিন্যাকুড়ি, কাজিরডাঙ্গা, চিরিরবন্দর, দিনাজপুর ।
   </div>
 
+  <script>
+    function handleNagadClick() {
+      alert("Nagad অ্যাপ ওপেন হচ্ছে...\n\nSend Money অপশনে গিয়ে ৬৫০ টাকা পাঠান।\nরেফারেন্স হিসেবে আপনার নাম লিখুন।\n\nধন্যবাদ!");
+    }
+
+    document.getElementById('regForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value || "ভাই/আপু";
+      alert(`🎉 ${name}, আপনার রেজিস্ট্রেশন সফল হয়েছে!\n\nএখন উপরের "নগদে ৬৫০ টাকা পে করুন" বাটনে ক্লিক করে পেমেন্ট সম্পন্ন করুন।`);
+      this.reset();
+    });
+  </script>
 </body>
 </html>
