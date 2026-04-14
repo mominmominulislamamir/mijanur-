@@ -1,0 +1,88 @@
+:root {
+    --primary: #2ecc71; /* সবুজ (সাফিনা পার্ক লোগো স্টাইল) */
+    --secondary: #3498db; /* নীল */
+    --accent: #e74c3c; /* লাল */
+    --white: #ffffff;
+    --light-bg: #f8fafc;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+body {
+    font-family: 'Hind Siliguri', sans-serif;
+    background-color: var(--light-bg);
+    color: #334155;
+    overflow-x: hidden;
+}
+
+#bg-canvas { position: fixed; top: 0; left: 0; z-index: -1; }
+
+/* নেভিগেশন */
+.navbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 8%; background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px); position: fixed; width: 100%; top: 0; z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+}
+
+.logo { font-size: 26px; font-weight: 700; color: var(--primary); font-family: 'Orbitron', sans-serif; }
+.logo span { color: var(--secondary); }
+.nav-links { display: flex; list-style: none; gap: 20px; }
+.nav-links a { text-decoration: none; color: #475569; font-weight: 600; transition: 0.3s; }
+.nav-links a:hover { color: var(--primary); }
+
+/* হিরো সেকশন */
+.hero {
+    height: 100vh; display: flex; align-items: center; justify-content: center;
+    background: radial-gradient(circle, #ffffff, #e2e8f0);
+}
+
+.hero-card {
+    background: var(--white); padding: 50px; border-radius: 40px;
+    border: 8px solid var(--primary); text-align: center;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.1); width: 90%; max-width: 800px;
+}
+
+.tagline { color: var(--secondary); margin-bottom: 10px; font-style: italic; }
+h1 { font-size: 3.5rem; color: #1e293b; margin-bottom: 20px; font-weight: 800; }
+
+.main-dest {
+    background: var(--accent); color: white; display: inline-block;
+    padding: 12px 40px; border-radius: 50px; font-size: 2rem;
+    margin-bottom: 30px; box-shadow: 0 10px 20px rgba(231, 76, 60, 0.3);
+}
+
+.event-meta { display: flex; justify-content: center; gap: 30px; margin-bottom: 30px; }
+.meta-item { font-size: 1.3rem; font-weight: 700; color: #334155; }
+.meta-item i { color: var(--primary); }
+
+.btn-main {
+    text-decoration: none; background: var(--secondary); color: white;
+    padding: 15px 40px; border-radius: 50px; font-weight: 700;
+    display: inline-block; transition: 0.3s;
+}
+.btn-main:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(52, 152, 219, 0.4); }
+
+/* সেকশন ডিজাইন */
+.details, .booking { padding: 100px 10%; text-align: center; }
+.section-title { font-size: 2.5rem; margin-bottom: 50px; position: relative; display: inline-block; }
+.section-title::after { content: ''; width: 60%; height: 5px; background: var(--primary); position: absolute; bottom: -10px; left: 20%; }
+
+.info-grid, .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+.info-box, .card {
+    background: white; padding: 40px; border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s;
+}
+.card.highlight { border-top: 5px solid var(--secondary); background: #f0f7ff; }
+.card h3 { margin-bottom: 10px; color: #1e293b; }
+.card p { font-weight: bold; font-size: 1.2rem; color: var(--primary); }
+
+.organizers { margin-top: 50px; font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+
+footer { background: #f1f5f9; padding: 40px; text-align: center; border-top: 1px solid #e2e8f0; }
+
+@media (max-width: 600px) {
+    h1 { font-size: 2.2rem; }
+    .main-dest { font-size: 1.4rem; }
+    .event-meta { flex-direction: column; gap: 10px; }
+}
