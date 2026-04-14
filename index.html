@@ -3,360 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>আনন্দ ভ্রমণ ২০২৫ - লাফিনা পার্ক | রাজশাহী</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&family=Noto+Serif+Bengali:wght@400;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <style>
-        /* সিএসএস (CSS) - ওয়েবসাইটের ডিজাইন */
-        
-        :root {
-            --primary-color: #f72585; /* মেজেন্টা - প্রিমিয়াম হাইলাইটের জন্য */
-            --secondary-color: #4cc9f0; /* নীল - ঠান্ডা ও তাজা ভাব */
-            --bg-color: #fcfcfc;
-            --text-color: #333;
-            --white: #ffffff;
-            --bangla-font: 'Noto Serif Bengali', serif;
-            --english-font: 'Poppins', sans-serif;
-            --glass: rgba(255, 255, 255, 0.05);
-            --border: rgba(255, 255, 255, 0.1);
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: var(--bangla-font);
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-        
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* পার্টিকেল ব্যাকগ্রাউন্ড */
-        .bg-animate {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(135deg, #1a1a2e 0%, #0a0a0c 100%);
-            z-index: -1;
-        }
-
-        .sphere {
-            position: absolute;
-            width: 300px; height: 300px;
-            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-            filter: blur(80px);
-            border-radius: 50%;
-            opacity: 0.2;
-            animation: move 20s infinite alternate;
-        }
-
-        @keyframes move {
-            from { transform: translate(-10%, -10%) rotate(0deg); }
-            to { transform: translate(100%, 50%) rotate(360deg); }
-        }
-
-        /* হেডার ও নেভিগেশন */
-        header {
-            background-color: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
-            color: var(--white);
-            padding: 20px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-family: var(--english-font);
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--secondary-color);
-        }
-        
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: var(--white);
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-links a:hover {
-            color: var(--secondary-color);
-        }
-        
-        /* হিরো সেকশন - প্রথম দেখা */
-        .hero {
-            background-color: #1a1a2e;
-            color: var(--white);
-            padding: 150px 0 100px;
-            text-align: center;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .hero::before {
-            content: '';
-            display: block;
-            width: 100%;
-            height: 100%;
-            background-image: url('https://via.placeholder.com/1200x600'); /* লাফিনা পার্কের একটি ছবি আপলোড করে লিঙ্ক দিন */
-            background-size: cover;
-            background-position: center;
-            opacity: 0.1;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-content h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
-        
-        .hero-content p {
-            font-size: 1.2rem;
-            font-weight: 300;
-            color: #ddd;
-            margin-bottom: 30px;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--primary-color);
-            color: var(--white);
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 700;
-            transition: transform 0.3s ease;
-        }
-        
-        .btn:hover {
-            transform: translateY(-3px);
-        }
-        
-        /* ইভেন্ট কার্ড (Glassmorphism) */
-        .event-card-container {
-            margin-top: -50px; /* হিরো সেকশনের নিচে বসানোর জন্য */
-            text-align: center;
-            perspective: 1000px;
-        }
-        
-        .event-card {
-            display: inline-block;
-            background: var(--glass);
-            backdrop-filter: blur(15px);
-            border: 1px solid var(--border);
-            padding: 50px;
-            border-radius: 30px;
-            width: auto;
-            max-width: 600px;
-            transform-style: preserve-3d;
-            transition: transform 0.5s;
-            box-shadow: 0 25px 45px rgba(0,0,0,0.5);
-            text-align: left;
-            color: var(--white);
-        }
-
-        .event-card:hover {
-            transform: rotateY(10deg) rotateX(5deg);
-        }
-
-        .event-card-title {
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-            transform: translateZ(30px);
-        }
-
-        .event-detail-item {
-            margin-bottom: 15px;
-            transform: translateZ(20px);
-        }
-
-        .event-detail-item strong {
-            color: var(--secondary-color);
-        }
-
-        .event-detail-item i {
-            color: var(--secondary-color);
-            margin-right: 10px;
-        }
-
-        .event-price {
-            background-color: var(--white);
-            color: var(--text-color);
-            padding: 15px;
-            border-radius: 20px;
-            font-weight: 700;
-            font-size: 1.2rem;
-            margin-top: 25px;
-            display: inline-block;
-            transform: translateZ(20px);
-        }
-
-        /* যোগাযোগ সেকশন */
-        .contact {
-            padding: 80px 0;
-            text-align: center;
-        }
-        
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-            color: #333;
-            position: relative;
-        }
-        
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background-color: var(--secondary-color);
-            margin: 10px auto 0;
-            border-radius: 2px;
-        }
-        
-        .contact-list {
-            list-style: none;
-            margin-top: 30px;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-        
-        .contact-item {
-            margin-bottom: 10px;
-            font-weight: 600;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-        }
-        
-        .contact-item:hover {
-            transform: translateY(-3px);
-        }
-
-        .contact-item i {
-            color: var(--secondary-color);
-            margin-right: 10px;
-        }
-
-        /* ফুটার */
-        footer {
-            background-color: rgba(0, 0, 0, 0.8);
-            color: #ddd;
-            padding: 30px 0;
-            text-align: center;
-            font-size: 0.9rem;
-        }
-        
-        /* মোবাইল রেসপন্সিভ */
-        @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 2.2rem;
-            }
-            .event-card {
-                padding: 30px;
-                width: 90%;
-            }
-            .contact-list {
-                gap: 10px;
-            }
-        }
-    </style>
+    <title>আনন্দ ভ্রমণ ২০২৬ | সাফিনা পার্ক</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Orbitron:wght@800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">লাফিনা পার্ক ২০২৫</div>
-                <ul class="nav-links">
-                    <li><a href="#about">আমার সম্পর্কে</a></li>
-                    <li><a href="#event">ইভেন্ট</a></li>
-                    <li><a href="#contact">যোগাযোগ</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <canvas id="bg-canvas"></canvas>
 
-    <section class="hero" id="home">
-        <div class="container hero-content">
-            <h1>খুশিতে একদিন আনন্দে সারাদিন...</h1>
-            <p>আপনার আনন্দ ভ্রমণ উপভোগ করুন আমাদের সাথে।</p>
-            <a href="#contact" class="btn">আমাকে ফলো করুন</a>
+    <nav class="navbar">
+        <div class="logo">ভ্রমণ<span>২০২৬</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">মূল পাতা</a></li>
+            <li><a href="#info">বিস্তারিত</a></li>
+            <li><a href="#contact">বুকিং</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-card">
+            <h4 class="tagline">খুশিতে একদিন আনন্দে সারাদিন..</h4>
+            <h1>আনন্দ ভ্রমণ-২০২৬</h1>
+            <div class="main-dest">সাফিনা পার্ক, রাজশাহী</div>
+            <div class="event-meta">
+                <div class="meta-item"><i class="fas fa-calendar-day"></i> তারিখ: ঈদের ২য় দিন</div>
+                <div class="meta-item"><i class="fas fa-ticket-alt"></i> ফি: ৬৫০/- (জনপ্রতি)</div>
+            </div>
+            <a href="#contact" class="btn-main">আপনার সিট বুক করুন</a>
         </div>
     </section>
-    
-    <div class="event-card-container" id="event">
-        <div class="event-card">
-            <h2 class="event-card-title">আনন্দ ভ্রমণ ২০২৫ - লাফিনা পার্ক | রাজশাহী</h2>
-            <div class="event-detail-item"><strong><i class="far fa-calendar-alt"></i>তারিখ:</strong> ঈদের ২য় দিন</div>
-            <div class="event-detail-item"><strong><i class="fas fa-map-marker-alt"></i>স্থান:</strong> লাফিনা পার্ক, রাজশাহী</div>
-            <div class="event-detail-item"><strong><i class="far fa-map-pin"></i>অবস্থান:</strong> বিন্যাকুড়ী, কাজিরডাঙ্গা, চিরিরবন্দর, দিনাজপুর।</div>
-            <p class="event-detail-item"><i class="far fa-check-circle"></i> লাফিনা পার্কে দিনটি আনন্দময় করুন এবং সারা দিন উপভোগ করুন!</p>
-            <div class="event-price"><i class="fas fa-money-bill-alt"></i>ফি: ৬৫০/-</div>
-        </div>
-    </div>
 
-    <section class="contact" id="contact">
+    <section id="info" class="details">
         <div class="container">
-            <h2 class="section-title">যোগাযোগ করুন</h2>
-            <ul class="contact-list">
-                <li class="contact-item"><i class="fas fa-user"></i>মমিনুল</li>
-                <li class="contact-item"><i class="fas fa-phone"></i>০১৬১৪-৩৭৯০২৯</li>
-                <li class="contact-item"><i class="fas fa-user"></i>জাহিদ</li>
-                <li class="contact-item"><i class="fas fa-phone"></i>০১৮৩০-৪৭১৮১৩</li>
-                <li class="contact-item"><i class="fas fa-user"></i>মিজানুর</li>
-                <li class="contact-item"><i class="fas fa-phone"></i>০১৯৩৩-০৬২১৪৩</li>
-                <li class="contact-item"><i class="fas fa-user"></i>সুজন</li>
-                <li class="contact-item"><i class="fas fa-phone"></i>০১৮৮২-৮০৪৪৮১</li>
-            </ul>
+            <h2 class="section-title">ভ্রমণ পরিচিতি</h2>
+            <div class="info-grid">
+                <div class="info-box">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>গন্তব্য ও অবস্থান</h3>
+                    <p>সাফিনা পার্ক, রাজশাহী। <br> বিন্যাকুড়ী, কাজিরডাঙ্গা, চিরিরবন্দর, দিনাজপুর।</p>
+                </div>
+                <div class="info-box">
+                    <i class="fas fa-star"></i>
+                    <h3>বিশেষ আকর্ষণ</h3>
+                    <p>প্রাকৃতিক সৌন্দর্য, আধুনিক রাইডস, দুপুরের উন্নত খাবার এবং দিনব্যাপী বিনোদন।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="booking">
+        <h2 class="section-title">যোগাযোগ করুন</h2>
+        <div class="contact-grid">
+            <div class="card">
+                <h3>মমিনুল</h3>
+                <p>০১৬১৪-৩৭৯০২৯</p>
+            </div>
+            <div class="card">
+                <h3>জাহিদ</h3>
+                <p>০১৮৩০-৪৭১৮১৩</p>
+            </div>
+            <div class="card highlight">
+                <h3>মিজানুর</h3>
+                <p>০১৯৩৩-০৬২১৪৩</p>
+            </div>
+            <div class="card">
+                <h3>সুজন</h3>
+                <p>০১৮৮২-৮০৪৪৮১</p>
+            </div>
+        </div>
+        <div class="organizers">
+            <p>আয়োজনে: মুন্না, রবিউল, রাকিবুল</p>
         </div>
     </section>
 
     <footer>
-        <div class="container">
-            <p>&copy; ২০২৫ আনন্দ ভ্রমণ - লাফিনা পার্ক | সর্বস্বত্ব সংরক্ষিত</p>
-        </div>
+        <p>&copy; ২০২৬ আনন্দ ভ্রমণ | ডেভেলপড বাই মিজানুর ইসলাম</p>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
 </body>
-                                           </html>
+</html>
